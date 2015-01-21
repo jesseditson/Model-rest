@@ -1,0 +1,32 @@
+{
+  "name": "Model-rest",
+  "version": "0.0.1",
+  "description": "Mise Model superclass for interfacing with REST APIs",
+  "main": "lib/Model-rest.js",
+  "scripts": {
+    "test": "mocha --recursive --reporter spec --bail --check-leaks test/lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/misejs/Model-rest.git"
+  },
+  "keywords": [
+    "mise",
+    "Model",
+    "REST"
+  ],
+  "author": "Jesse Ditson <jesse.ditson@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misejs/Model-rest/issues"
+  },
+  "homepage": "https://github.com/misejs/Model-rest",
+  "dependencies": {
+    "mise-model": "0.0.1",
+    "superagent": "^0.21.0",
+    "superagent-prefix": "0.0.2"
+  },
+  "devDependencies": {
+    "nock": "^0.57.0"
+  }
+}
