@@ -19,7 +19,7 @@ describe('Model-mongo',function(){
       name : {
         type : String
       }
-    },'things','http://prixfixeapp.com/api');
+    },'things','http://prixfixeapp.com/api/');
     model = new Thing({name : 'pork'});
   });
 
