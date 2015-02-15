@@ -1,7 +1,7 @@
 {
-  "name": "Model-rest",
+  "name": "mise-model-rest",
   "version": "0.0.1",
-  "description": "Mise Model superclass for interfacing with REST APIs",
+  "description": "A Mise Model extension for interfacing with REST APIs",
   "main": "lib/Model-rest.js",
   "scripts": {
     "test": "mocha --recursive --reporter spec --bail --check-leaks test/lib/"

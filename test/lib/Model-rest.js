@@ -1,6 +1,6 @@
 var assert = require('assert');
-var Model = require('../../lib/Model-rest');
-var MiseModel = require('mise-model');
+var extend = require('../../lib/Model-rest');
+var Model = require('mise-model');
 var mockServer = require('../mockServer.js');
 
 describe('Model-mongo',function(){
@@ -12,19 +12,22 @@ describe('Model-mongo',function(){
     mockServer();
 
     // set up our data
-    Thing = new Model('Thing',{
+    var OGModel = new Model('Thing',{
       _id : {
         type : String
       },
       name : {
         type : String
       }
-    },'things','http://prixfixeapp.com/api/');
+    },'things');
+    Thing = extend(OGModel,{
+      baseURL : 'http://prixfixeapp.com/api/'
+    });
     model = new Thing({name : 'pork'});
   });
 
   it('should inherit the prototype of mise Model',function(){
-    var miseModel = new MiseModel('Thing',{},'things');
+    var miseModel = new Model('Thing',{},'things');
     Object.keys(miseModel.prototype).forEach(function(prop){
       assert.ok(Thing.prototype[prop]);
     });
