@@ -22,11 +22,10 @@
   },
   "homepage": "https://github.com/misejs/Model-rest",
   "dependencies": {
-    "mise-model": "0.0.1",
-    "superagent": "^0.21.0",
-    "superagent-prefix": "0.0.2"
+    "superagent": "~0.21.0"
   },
   "devDependencies": {
-    "nock": "^0.57.0"
+    "mise-model": "~0.0.4",
+    "nock": "~0.57.0"
   }
 }
