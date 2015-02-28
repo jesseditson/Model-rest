@@ -1,6 +1,6 @@
 {
   "name": "mise-model-rest",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Mise Model extension for interfacing with REST APIs",
   "main": "lib/Model-rest.js",
   "scripts": {
