@@ -80,6 +80,45 @@ describe('Model-mongo',function(){
       });
     });
 
+    describe('model that does not exist', function(){
+
+      var NoThing;
+      var badmodel;
+
+      before(function(){
+        // set up our data
+        var OGModel = new Model('Thing',{
+          _id : {
+            type : String
+          },
+          name : {
+            type : String
+          }
+        },'things');
+        NoThing = extend(OGModel,{
+          baseURL : 'http://fakeurl.com/api'
+        });
+        badmodel = new Thing({name : 'pork'});
+      });
+
+      it('should return null when calling .one',function(done){
+        NoThing.one('',function(err,got){
+          assert.ifError(err);
+          assert.equal(null,got);
+          done();
+        });
+      });
+
+      it('should return an empty array when calling .all',function(done){
+        NoThing.all(function(err,got){
+          assert.ifError(err);
+          assert.ok(Array.isArray(got));
+          assert.equal(got.length,0);
+          done();
+        });
+      });
+    });
+
   });
 
 });

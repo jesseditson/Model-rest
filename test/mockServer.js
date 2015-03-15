@@ -35,4 +35,21 @@ function mockServer(){
   server
     .delete('/things/10')
     .reply(204);
+
+  var badServer = nock('http://fakeurl.com/api');
+  server
+    .get('/things/1')
+    .reply(404,{});
+  server
+    .get('/things')
+    .reply(404,{});
+  server
+    .post('/things')
+    .reply(404,{error : 'Item not found'});
+  server
+    .put('/things/10')
+    .reply(404,{error : 'Item not found'});
+  server
+    .delete('/things/10')
+    .reply(404);
 };
